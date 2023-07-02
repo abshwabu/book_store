@@ -39,4 +39,22 @@ scroll.grid(row=2,column=2,rowspan=6)
 listAll.configure(yscrollcommand=scroll.set)
 scroll.configure(command=listAll.yview)
 
+viewAll = Button(window,text='View All',width=15)
+viewAll.grid(row=2,column=3)
+
+search = Button(window,text='Search',width=15)
+search.grid(row=3,column=3)
+
+add = Button(window,text='Add',width=15)
+add.grid(row=4,column=3)
+
+update = Button(window,text='Update',width=15)
+update.grid(row=5,column=3)
+
+delete = Button(window,text='Delete',width=15)
+delete.grid(row=6,column=3)
+
+close = Button(window,text='Close',width=15)
+close.grid(row=7,column=3)
+
 window.mainloop()
