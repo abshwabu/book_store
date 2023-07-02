@@ -14,4 +14,19 @@ year.grid(row=1,column=0)
 isbn = Label(window,text='isbn')
 isbn.grid(row=1,column=2)
 
+title_text = StringVar()
+title_entery = Entry(window,textvariable=title_text)
+title_entery.grid(row=0,column=1)
+
+year_text = StringVar()
+year_entery = Entry(window,textvariable=year_text)
+year_entery.grid(row=1,column=1)
+
+author_text = StringVar()
+author_entery = Entry(window,textvariable=author_text)
+author_entery.grid(row=0,column=3)
+
+isbn_text = StringVar()
+isbn_entery = Entry(window,textvariable=isbn_text)
+isbn_entery.grid(row=1,column=3)
 window.mainloop()
