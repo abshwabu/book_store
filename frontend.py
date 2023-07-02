@@ -33,4 +33,10 @@ isbn_entery.grid(row=1,column=3)
 listAll = Listbox(window,height=6,width=35)
 listAll.grid(row=2,column=0,rowspan=6,columnspan=2)
 
+scroll = Scrollbar(window)
+scroll.grid(row=2,column=2,rowspan=6)
+
+listAll.configure(yscrollcommand=scroll.set)
+scroll.configure(command=listAll.yview)
+
 window.mainloop()
