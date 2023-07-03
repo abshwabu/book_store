@@ -34,7 +34,14 @@ def delete(id):
     db.commit()
     db.close()
 
+def update(id, title, author, year, isbn):
+    db = sqlite3.connect("books.db")
+    curs= db.cursor()
+    curs.execute("UPDATE book SET title=?, author=?, year=?, isbn=? WHERE id=?",(title,author,year,isbn,id))
+    db.commit()
+    db.close()
+
 connect()
 # insert("Fortrus of muslim","Ibn qeyim",735,1234567)
-delete(2)
+update(4,"The alchemist","unknown",1998,7654321)
 print(viewAll())
