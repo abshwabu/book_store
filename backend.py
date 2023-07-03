@@ -13,7 +13,7 @@ def insert( title, author, year, isbn):
     curs.execute("INSERT INTO book  VALUES(NULL,?,?,?,?)",(title,author,year,isbn))
     db.commit()
     db.close()
-def search( title, author, year, isbn):
+def search( title="", author="", year="", isbn=""):
     db = sqlite3.connect("books.db")
     curs = db.cursor()
     curs.execute("SELECT * FROM book WHERE title=? OR author=? OR year=? OR isbn=?",(title,author,year,isbn))
@@ -28,6 +28,7 @@ def viewAll():
     db.close()
     return rows
 
+
 connect()
-insert("Atomic habit","Jeams",2015,123456)
-viewAll()
+# insert("Fortrus of muslim","Ibn qeyim",735,1234567)
+print(search(author="Ibn qeyim"))
