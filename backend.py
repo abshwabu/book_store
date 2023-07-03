@@ -27,8 +27,14 @@ def viewAll():
     rows = curs.fetchall()
     db.close()
     return rows
-
+def delete(id):
+    db = sqlite3.connect("books.db")
+    curs = db.cursor()
+    curs.execute("DELETE FROM book WHERE id=?",(id,))
+    db.commit()
+    db.close()
 
 connect()
 # insert("Fortrus of muslim","Ibn qeyim",735,1234567)
-print(search(author="Ibn qeyim"))
+delete(2)
+print(viewAll())
