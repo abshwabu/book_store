@@ -12,6 +12,9 @@ def search_comands():
         listAll.insert(END, row)
 
 
+def add_comands():
+    backend.insert(title_text.get(),author_text.get(),year_text.get(),isbn_text.get())
+
 title = Label(window,text='title')
 title.grid(row=0,column=0)
 
@@ -55,7 +58,7 @@ viewAll.grid(row=2,column=3)
 search = Button(window,text='Search',width=15,command=search_comands)
 search.grid(row=3,column=3)
 
-add = Button(window,text='Add',width=15)
+add = Button(window,text='Add',width=15,command=add_comands)
 add.grid(row=4,column=3)
 
 update = Button(window,text='Update',width=15)
