@@ -34,6 +34,9 @@ def add_comands():
 def delete_comands():
     backend.delete(selectedRow[0])
 
+def update_comands():
+    backend.update(selectedRow[0],title_text.get(),author_entery.get(),year_text.get(),isbn_text.get())
+
 
 title = Label(window,text='title')
 title.grid(row=0,column=0)
@@ -83,7 +86,7 @@ search.grid(row=3,column=3)
 add = Button(window,text='Add',width=15,command=add_comands)
 add.grid(row=4,column=3)
 
-update = Button(window,text='Update',width=15)
+update = Button(window,text='Update',width=15,command=update_comands)
 update.grid(row=5,column=3)
 
 delete = Button(window,text='Delete',width=15,command=delete_comands)
