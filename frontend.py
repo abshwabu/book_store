@@ -3,9 +3,11 @@ import backend
 window = Tk()
 
 def getSelectedRow(event):
+    global selectedRow
     index = listAll.curselection()[0]
     selectedRow = listAll.get(index)
     print(selectedRow)
+    
 
 def view_all():
     listAll.delete(0,END)
@@ -20,6 +22,10 @@ def search_comands():
 
 def add_comands():
     backend.insert(title_text.get(),author_text.get(),year_text.get(),isbn_text.get())
+
+def delete_comands():
+    backend.delete(selectedRow[0])
+
 
 title = Label(window,text='title')
 title.grid(row=0,column=0)
@@ -72,7 +78,7 @@ add.grid(row=4,column=3)
 update = Button(window,text='Update',width=15)
 update.grid(row=5,column=3)
 
-delete = Button(window,text='Delete',width=15)
+delete = Button(window,text='Delete',width=15,command=delete_comands)
 delete.grid(row=6,column=3)
 
 close = Button(window,text='Close',width=15)
