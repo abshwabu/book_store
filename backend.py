@@ -42,6 +42,3 @@ def update(id, title, author, year, isbn):
     db.close()
 
 connect()
-# insert("Fortrus of muslim","Ibn qeyim",735,1234567)
-update(4,"The alchemist","unknown",1998,7654321)
-print(viewAll())
