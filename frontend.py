@@ -1,6 +1,6 @@
 from tkinter import *
 import backend
-window = Tk()
+
 
 def getSelectedRow(event):
     global selectedRow
@@ -37,6 +37,9 @@ def delete_comands():
 def update_comands():
     backend.update(selectedRow[0],title_text.get(),author_entery.get(),year_text.get(),isbn_text.get())
 
+window = Tk()
+
+window.wm_title('Book Store')
 
 title = Label(window,text='title')
 title.grid(row=0,column=0)
