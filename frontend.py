@@ -1,6 +1,12 @@
 from tkinter import *
 import backend
 window = Tk()
+
+def getSelectedRow(event):
+    index = listAll.curselection()[0]
+    selectedRow = listAll.get(index)
+    print(selectedRow)
+
 def view_all():
     listAll.delete(0,END)
     for row in backend.viewAll():
@@ -45,6 +51,8 @@ isbn_entery.grid(row=1,column=3)
 
 listAll = Listbox(window,height=6,width=35)
 listAll.grid(row=2,column=0,rowspan=6,columnspan=2)
+
+listAll.bind('<<ListboxSelect>>',getSelectedRow)
 
 scroll = Scrollbar(window)
 scroll.grid(row=2,column=2,rowspan=6)
