@@ -92,7 +92,7 @@ update.grid(row=5,column=3)
 delete = Button(window,text='Delete',width=15,command=delete_comands)
 delete.grid(row=6,column=3)
 
-close = Button(window,text='Close',width=15)
+close = Button(window,text='Close',width=15,command=window.destroy)
 close.grid(row=7,column=3)
 
 window.mainloop()
