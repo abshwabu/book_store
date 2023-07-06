@@ -6,7 +6,15 @@ def getSelectedRow(event):
     global selectedRow
     index = listAll.curselection()[0]
     selectedRow = listAll.get(index)
-    print(selectedRow)
+    title_entery.delete(0,END)
+    title_entery.insert(END,selectedRow[1])
+    author_entery.delete(0,END)
+    author_entery.insert(END,selectedRow[2])
+    year_entery.delete(0,END)
+    year_entery.insert(END,selectedRow[3])
+    isbn_entery.delete(0,END)
+    isbn_entery.insert(END,selectedRow[4])
+
     
 
 def view_all():
